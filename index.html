@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PingPong</title>
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts (Orbitron, Oxanium & VT323)-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="starting-screen">
+    <img src="./img/paddles.png" alt="logo">
+    <button id="play-btn">PLAY</button>
+  </div>
+  <div class="scoreboard">
+    <div class="player">
+      <p style="text-shadow: 0 5px 5px #f11">PLAYER 1</p>
+      <p style="text-shadow: 0 5px 5px #f11">SCORE: <span id="p1-score">0</span></p>
+    </div>
+    <div class="timer">
+      <p id="time">150</p>
+    </div>
+    <div class="player">
+      <p style="text-shadow: 0 5px 5px #111">PLAYER 2</p>
+      <p style="text-shadow: 0 5px 5px #111">SCORE: <span id="p2-score">0</span></p>
+    </div>
+  </div>
+  <div class="pause-menu">
+    <div class="pause-menu-btns">
+      <button class="pause-menu-btn" id="p1-controls-btn">PLAYER 1 CONTROLS</button>
+      <button class="pause-menu-btn" id="p2-controls-btn">PLAYER 2 CONTROLS</button>
+      <button class="pause-menu-btn exit-btn">EXIT GAME</button>
+    </div>
+    <div class="p1-controls">
+      <p>PLAYER 1 CONTROLS</p>
+      <p>W: MOVE PADDLE UP</p>
+      <p>S: MOVE PADDLE DOWN</p>
+      <p>A: CHANGE HIT SIDE</p>
+      <p>D: STRONG STRAIGHT HIT</p>
+      <button class="hints-btn">- HINTS -</button>
+      <button class="back-btn">&#11160; BACK</button>    
+    </div>
+    <div class="p2-controls">
+      <p>PLAYER 2 CONTROLS</p>
+      <p>&#129093;: MOVE PADDLE UP</p>
+      <p>&#129095;: MOVE PADDLE DOWN</p>
+      <p>&#129094;: CHANGE HIT SIDE</p>
+      <p>&#129092;: STRONG STRAIGHT HIT</p>
+      <button class="hints-btn">- HINTS -</button> 
+      <button class="back-btn">&#11160; BACK</button>   
+    </div>
+    <div class='hints-container'>       
+      <button class="back-btn">&#11160; BACK</button>  
+      <ul>
+        <li>IF NO HIT BUTTON IS PRESSED, THE BALL WILL BE SENT BACK ALONG THE SAME ROUTE.</li>
+        <li>THE LAST HIT BUTTON PRESSED BEFORE THE BALL HITS THE PADDLE WILL APPLY.</li>
+        <li>CLICKS ON HIT BUTTONS ARE CUMULATIVE: THE MORE YOU CLICK THEM, THE MORE STRENGTH OR ANGLE WILL BE APPLIED TO THE HIT.</li>
+        <li>IF YOU RECEIVE A STRAIGHT HIT AND CLICK ON "CHANGE HIT SIDE", YOU WILL SEND THE BALL TO THE OPPOSITE SIDE OF YOUR PADDLE.</li>
+      </ul>
+      <p>PRESS SPACEBAR TO RESUME THE GAME!</p>
+    </div>
+    <p>PRESS SPACEBAR TO RESUME THE GAME!</p>
+  </div>
+  <div class="winner-menu">
+    <p id="winner-player">PLAYER WINS!</p>
+    <div class="winner-buttons">
+      <button id="replay-btn">REPLAY</button>
+      <button class="exit-btn">EXIT GAME</button>
+    </div>
+    <div class="fireworks">
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+      <p class="fireworks-star">&#10035;</p>
+    </div>    
+  </div>
+  <div id="draw-ball"></div>
+  <img id="table" style="display: none" src="img/table-border-shadow.png" alt="pingpong-table">
+  <canvas></canvas>
+  <script src="audio.js"></script>
+  <script src="classes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

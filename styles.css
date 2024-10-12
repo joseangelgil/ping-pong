@@ -1,0 +1,450 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Orbitron", sans-serif; 
+  /* font-family: "Oxanium", sans-serif; */
+  /* font-family: "VT323", monospace; */
+  background-color: #000c;
+  color: white;
+  letter-spacing: 2px;
+}
+
+
+/* Starting Screen */
+
+.starting-screen,
+.pause-menu,
+.winner-menu,
+.hints-container { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: #2438aa;
+  position: absolute;
+  z-index: 3;
+  margin-top: 5rem;
+}
+
+.starting-screen img {
+  width: 300px;
+}
+
+.starting-screen button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-family: "Orbitron", sans-serif; 
+  /* font-family: "Oxanium", sans-serif; */
+  /* font-family: "VT323", monospace; */
+  margin-top: -60px;
+  font-weight: bold;
+  text-shadow: 0 0 3px black;
+}
+
+.starting-screen button:hover {
+  color: orange;
+}
+
+
+/* ScoreBoard */
+
+.scoreboard {
+  width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 80%;
+  margin-bottom: 5px;
+  position: relative;
+  opacity: 0;
+}
+
+.scoreboard .player {
+  font-size: 1.5rem;
+}
+
+.scoreboard .timer {
+  font-size: 3.8rem;
+  margin-bottom: -8px;
+}
+
+
+/* Pause-Menu */
+
+.pause-menu {
+  display: none;
+  text-align: center;
+  gap: 20px;
+  color: orange;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 0 black;
+}
+
+.pause-menu-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 40%;
+}
+
+.pause-menu-btn {
+  color: white;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1em;  
+  font-family: "Orbitron", sans-serif; 
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#p1-controls-btn:hover {
+  color: #f11;
+}
+
+#p2-controls-btn:hover {
+  color: #111;
+}
+
+.p1-controls,
+.p2-controls {
+  display: none;
+  text-align: left;
+  margin-left: 20px;
+  color: white;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.p1-controls p:first-of-type {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.p2-controls p:first-of-type {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.pause-menu .hints-btn {
+  margin-left: calc(50% - 10px);
+  transform: translateX(-50%);
+  margin-top: 20px;
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: inherit;
+  letter-spacing: 2px;
+}
+
+.pause-menu .back-btn {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  text-shadow: 1px 1px 0 black;
+  cursor: pointer;
+}
+
+.pause-menu .back-btn:hover,
+.pause-menu .hints-btn:hover {
+  color: orange;
+}
+
+.hints-container {
+  display: none;
+  text-align: left;
+  font-size: 0.7rem;
+  margin-top: -10px;
+  padding: 50px 20px 0;
+  border-radius: 0;
+  color: white;
+  text-shadow: 1px 1px 0 black;
+}
+
+.hints-container button {
+  margin-top: -10px;
+}
+
+.hints-container li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.hints-container p {
+  margin-top: 50px;
+  font-size: 1rem;
+  text-align: center;
+  color: orange;
+}
+
+
+/* Winner-Menu */
+
+.winner-menu {
+  /* properties set before with .starting-screen  */
+  display: none; 
+  justify-content: space-evenly;
+  margin-top: 100px;
+  text-shadow: 1px 1px 0 black;
+} 
+
+
+.winner-menu #winner-player {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.winner-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  height: 30%;
+
+}
+
+.winner-menu button {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-family: "Orbitron", sans-serif; 
+  /* font-family: "Oxanium", sans-serif; */
+  /* font-family: "VT323", monospace; */
+  font-weight: bold;
+  text-shadow: 0 0 3px black;
+}
+
+.exit-btn:hover {
+  color: orange;
+}
+
+#replay-btn:hover {
+  color: orange;
+}
+
+
+/* Draw Ball */
+
+#draw-ball {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: orange;
+  top: 50%;
+  margin-top: 1.7rem;
+}
+
+.winner-menu .fireworks {
+  background: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.winner-menu .fireworks .fireworks-star {
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  olor: red;
+  transform: scale(2); */
+  text-shadow: none;
+  opacity: 0;
+}
+
+
+@keyframes drawAnimation {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(10);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+
+/* Canvas */
+
+canvas {
+  border: 2px solid white;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+@media screen and (max-width: 950px) {
+  html {
+    font-size: 10px;
+  }
+
+  .starting-screen,
+  .pause-menu,
+  .winner-menu,
+  .hints-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .starting-screen img {
+    width: 200px;
+  }
+
+  .starting-screen button {
+    font-size: 2.5rem;
+    margin-top: -40px;
+  }
+
+  .winner-menu {
+    margin-top: 50px;
+  } 
+
+  .winner-menu #winner-player {
+    font-size: 2.4rem;
+  }
+  
+  .p1-controls,
+  .p2-controls {
+    margin-bottom: 0;
+    line-height: 20px;
+  }  
+
+  .p1-controls p:first-of-type,
+  .p2-controls p:first-of-type {
+    margin-bottom: 10px;
+  }
+  
+  .p1-controls button,
+  .p2-controls button {
+    margin-top: 10px;
+  }
+
+  .pause-menu .back-btn {
+    top: 0;
+  }
+
+  .hints-container {
+    padding-top: 30px;
+  }
+
+  .hints-container button {
+    margin-top: 5px;
+  }
+
+  .hints-container li {
+    margin-bottom: 7px;
+  }
+
+  .hints-container p {
+    margin-top: 30px;
+  }
+}
+
+
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 10px;
+  }
+
+  .starting-screen,
+  .winner-menu {
+    width: 150px;
+    height: 150px;
+  }
+
+  .starting-screen img {
+    width: 100px;
+  }
+
+  .starting-screen button {
+    font-size: 1.5rem;
+    margin-top: -10px;
+  }
+  
+  .winner-menu #winner-player {
+    font-size: 1.3rem;
+  }
+
+  .winner-buttons {
+    gap: 15px; 
+  }
+  
+  .winner-menu button,
+  .pause-menu {
+    font-size: 1rem;
+  }
+
+  .pause-menu,
+  .hints-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .p1-controls,
+  .p2-controls {
+    font-size: 0.8rem;
+    margin-left: 10px;
+    line-height: 15px;
+    margin-bottom: -15px;
+  }
+
+  .p1-controls p:first-of-type,
+  .p2-controls p:first-of-type {
+    margin-bottom: 10px;
+  }
+  
+  .p1-controls .hints-btn,
+  .p2-controls .hints-btn {
+    margin-top: 7px;
+  }
+
+  .hints-container {
+    font-size: 0.5rem;
+  }
+
+  .hints-container li {
+    margin-bottom: 7px;
+  }
+
+  .hints-container p {
+    margin-top: 20px;
+    font-size: 0.7rem;
+  }
+
+}
