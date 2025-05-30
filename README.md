@@ -27,11 +27,15 @@ In addition to the core gameplay, it includes:
 
 ## 🎮 How to Play
 
-1. Do not let the ball hit your side of the table!
-2. Use the **keyboard** to control the game (movement, menu access, etc.).
-3. For a full list of controls, and how-to play, open the **in-game menu** by pressing the **Spacebar**.
+1. Try to hit the ball past your opponent to score points.
+2. Don’t let the ball reach your side of the table — defend your goal!
+3. Be careful with your aim: if the ball goes out of bounds (above or below the table) **without touching the opponent's side**, your opponent scores a point.
+4. The first player to reach **7–0**, or **11 points** with a **2-point lead**, wins the game!  
+   If the time runs out, the player with at least a **2-point lead** wins.
+5. Use the **keyboard** to control the game (movement, menu access, etc.).
+6. For a full list of controls and gameplay details, open the **in-game menu** by pressing the **Spacebar**.
 
-Enjoy the challenge and retro arcade feel!
+Challenge your friends and show them who's the best!
 
 ---
 
